@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Automation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-card" aria-labelledby="pageTitle">
+      <div class="hero-copy">
+        <p class="eyebrow">Finance Ops</p>
+        <h1 id="pageTitle">Billing Automation</h1>
+        <p class="hero-text">
+          Jalankan penagihan otomatis, pantau invoice jatuh tempo, dan proses auto-pay dalam satu dashboard.
+        </p>
+      </div>
+
+      <div class="hero-actions">
+        <button class="button button-primary" id="runAutomationButton" type="button">Run Automation</button>
+        <p class="run-note" id="lastRunLabel" aria-live="polite">Automation belum dijalankan</p>
+      </div>
+    </section>
+
+    <section class="summary-grid" aria-label="Billing summary">
+      <article class="summary-card">
+        <p class="summary-label">Total Invoice</p>
+        <strong class="summary-value" id="totalInvoices">0</strong>
+      </article>
+      <article class="summary-card">
+        <p class="summary-label">Pending</p>
+        <strong class="summary-value" id="pendingInvoices">0</strong>
+      </article>
+      <article class="summary-card">
+        <p class="summary-label">Overdue</p>
+        <strong class="summary-value" id="overdueInvoices">0</strong>
+      </article>
+      <article class="summary-card">
+        <p class="summary-label">Collected</p>
+        <strong class="summary-value" id="collectedAmount">$0</strong>
+      </article>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel-card">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Automation Log</p>
+            <h2>System Activity</h2>
+          </div>
+          <span class="pill">Live</span>
+        </div>
+        <ul class="activity-list" id="activityList" aria-live="polite"></ul>
+      </article>
+
+      <article class="panel-card">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Invoices</p>
+            <h2>Billing Queue</h2>
+          </div>
+          <span class="pill pill-muted">Today</span>
+        </div>
+        <div class="invoice-list" id="invoiceList"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
